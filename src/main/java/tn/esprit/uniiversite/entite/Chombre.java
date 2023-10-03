@@ -19,7 +19,7 @@ public class Chombre implements Serializable {
     @Column(name = "Type_Chambre")
     private TypeChambre TypeC;
     @ManyToOne
-    Bloc Blocs;
+    Bloc Bloc;
     @OneToMany(cascade = CascadeType.ALL)
     private Set<Reservation> reservations;
 

@@ -5,6 +5,7 @@ import lombok.Data;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -20,7 +21,8 @@ public class Reservation implements Serializable {
     private Date anneuniversitaire;
     @Column(name = "est_valide")
     private Boolean estValide;
+
     @ManyToMany(cascade = CascadeType.ALL)
-    private Set<Etudiant> etudiants;
+    private List<Etudiant> etudiants;
 
 }
