@@ -14,8 +14,7 @@ import java.util.Set;
 
 public class Reservation implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name ="id_reservation")
+    //@GeneratedValue
     private String id;
     @Column(name = "annee_universitaire")
     private Date anneuniversitaire;
