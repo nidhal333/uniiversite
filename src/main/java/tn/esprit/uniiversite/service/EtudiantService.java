@@ -1,5 +1,6 @@
 package tn.esprit.uniiversite.service;
 
+import org.jetbrains.annotations.NotNull;
 import org.springframework.stereotype.Service;
 import tn.esprit.uniiversite.Reosotiris.EtudiantRepository;
 import tn.esprit.uniiversite.entite.Etudiant;
@@ -12,26 +13,28 @@ public class EtudiantService implements IEtudiantService{
 
     @Override
     public List<Etudiant> retrieveAllEtudiants() {
-        return null;
+
+        return etudiantRepository.findAll();
     }
 
     @Override
-    public Etudiant addEtudiant(Etudiant e) {
-        return null;
+    public Etudiant addEtudiant(@NotNull Etudiant e) {
+        return etudiantRepository.save(e);
     }
 
     @Override
     public Etudiant updateEtudiant(Etudiant e) {
-        return null;
+
+        return etudiantRepository.save(e);
     }
 
     @Override
     public Etudiant retrieveEtudiant(Long idEtudiant) {
-        return null;
+        return etudiantRepository.findById(idEtudiant).get();
     }
 
     @Override
     public void removeEtudiant(Long idEtudiant) {
-
+        etudiantRepository.deleteById(idEtudiant);
     }
 }
