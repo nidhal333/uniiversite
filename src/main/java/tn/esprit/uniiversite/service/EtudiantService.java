@@ -18,7 +18,8 @@ public class EtudiantService implements IEtudiantService{
     }
 
     @Override
-    public Etudiant addEtudiant(@NotNull Etudiant e) {
+    public Etudiant addEtudiant(Etudiant e) {
+
         return etudiantRepository.save(e);
     }
 
