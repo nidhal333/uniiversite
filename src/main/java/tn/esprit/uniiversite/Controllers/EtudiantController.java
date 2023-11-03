@@ -13,13 +13,22 @@ import tn.esprit.uniiversite.service.IEtudiantService;
 
 @RestController
 @AllArgsConstructor
-//@Slf4j
-//@FieldDefaults(level = AccessLevel.PRIVATE)
-@RequestMapping("/etudiants")
+@Slf4j
+@FieldDefaults(level = AccessLevel.PRIVATE)
+@RequestMapping("etudiants")
 public class EtudiantController {
     IEtudiantService etudiantService;
 @PostMapping("/addEtudiant")
     public Etudiant addEtudiant(@RequestBody Etudiant e){
+
         return etudiantService.addEtudiant(e);
 }
+@PostMapping("/modif_etudiant")
+    public Etudiant updateEtudiant(@RequestBody Etudiant e)
+{
+    Etudiant etudiant=etudiantService.updateEtudiant(e);
+    return etudiant;
+}
+//@PostMapping("/remove-etudiant/{id_Etudiant}")
+
 }
