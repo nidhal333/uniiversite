@@ -1,7 +1,7 @@
 package tn.esprit.uniiversite.entite;
 
 import jakarta.persistence.*;
-import lombok.Data;
+import lombok.*;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -10,6 +10,11 @@ import java.util.Set;
 @Entity
 @Data
 @Table(name = "Etudiant")
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@ToString
 
 public class Etudiant implements Serializable {
     @Id

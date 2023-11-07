@@ -1,12 +1,13 @@
 package tn.esprit.uniiversite.service;
 
+import lombok.AllArgsConstructor;
 import org.jetbrains.annotations.NotNull;
 import org.springframework.stereotype.Service;
 import tn.esprit.uniiversite.Reosotiris.EtudiantRepository;
 import tn.esprit.uniiversite.entite.Etudiant;
 
 import java.util.List;
-
+@AllArgsConstructor
 @Service
 public class EtudiantService implements IEtudiantService{
     EtudiantRepository etudiantRepository;
