@@ -20,13 +20,12 @@ public class universiteService implements IUniversiteService{
     UniversiteRepository UniversiteRepository;
     FoyerRepository FoyerRepository;
 
-    public Universite affecterFoyerAUniversite (long idFoyer, String nomuniversite){
+    public void affecterFoyerAUniversite (long idFoyer, String nomuniversite){
         Universite Universites = UniversiteRepository.findByNomuniversite(nomuniversite);
         Foyer Foyers = FoyerRepository.findById(idFoyer).get();
 
-        Universites.getFoyers();
+        Universites.setFoyers(Foyers);
         UniversiteRepository.save(Universites);
-        return Universites;
     }
     @Override
     public Universite addUniversite(Universite e) {
