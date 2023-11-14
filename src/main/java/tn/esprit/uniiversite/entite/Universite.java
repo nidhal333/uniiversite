@@ -1,13 +1,17 @@
 package tn.esprit.uniiversite.entite;
 
 import jakarta.persistence.*;
-import lombok.Data;
+import lombok.*;
 
 import java.io.Serializable;
 
 @Entity
-@Data
 @Table(name = "Universte")
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@ToString
 public class Universite implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -18,4 +22,7 @@ public class Universite implements Serializable {
     private String adresse;
     @OneToOne
     private Foyer foyers;
+
+    public static void setFoyer(Foyer foyers) {
+    }
 }

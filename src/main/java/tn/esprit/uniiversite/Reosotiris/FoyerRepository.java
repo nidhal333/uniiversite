@@ -6,4 +6,6 @@ import tn.esprit.uniiversite.entite.Foyer;
 
 @Repository
 public interface FoyerRepository extends JpaRepository<Foyer,Long> {
+    @Override
+    <S extends Foyer> S save(S entity);
 }

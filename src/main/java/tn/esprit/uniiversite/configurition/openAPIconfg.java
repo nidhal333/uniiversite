@@ -34,4 +34,22 @@ import org.springframework.context.annotation.Configuration;
                                     .build();
 
         }
+        @Bean
+        public GroupedOpenApi UniversitePublicApi() {
+            return GroupedOpenApi.builder()
+                    .group("Only Universite Management API")
+                    .pathsToMatch("/Universite/**")
+                    .pathsToExclude("**")
+                    .build();
+
+        }
+        @Bean
+        public GroupedOpenApi FoyerPublicApi() {
+            return GroupedOpenApi.builder()
+                    .group("Only Foyer Management API")
+                    .pathsToMatch("/Foyer/**")
+                    .pathsToExclude("**")
+                    .build();
+
+        }
 }
