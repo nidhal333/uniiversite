@@ -16,11 +16,12 @@ import tn.esprit.uniiversite.service.universiteService;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @RequestMapping("Universite")
 public class UniversiteController {
+    universiteService universiteService;
     IUniversiteService universiteServices;
     @PutMapping("/affecter/{idFoyer}/{nomUniversite}")
-    public void affecgterfoyer(@PathVariable("idFoyer") Long idFoyer,
-                                             @PathVariable("nomUniversite") String nomUniversite) {
-        universiteServices.affecterFoyerAUniversite(idFoyer, nomUniversite);
+    public void affecterfoyer(@PathVariable("idFoyer") Long idFoyer,@PathVariable("nomUniversite") String nomUniversite)
+    {
+        universiteService.affecterFoyerAUniversite(idFoyer, nomUniversite);
     }
     @PostMapping("/addUniversite")
     public Universite addFoyer(@RequestBody Universite e){

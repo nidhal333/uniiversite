@@ -6,6 +6,7 @@ import lombok.*;
 import java.io.Serializable;
 
 @Entity
+@Data
 @Table(name = "Universte")
 @Getter
 @Setter
@@ -18,11 +19,11 @@ public class Universite implements Serializable {
     @Column(name = "idUniversite")
     private long id;
     @Column(name = "nom_Unversite")
-    private String nonUniversite;
+    private String nomuniversite;
     private String adresse;
-    @OneToOne
-    private Foyer foyers;
+    @OneToOne(cascade = CascadeType.ALL)
+     private Foyer foyers;
 
-    public static void setFoyer(Foyer foyers) {
-    }
+
+
 }

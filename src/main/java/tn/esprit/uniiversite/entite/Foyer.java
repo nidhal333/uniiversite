@@ -1,5 +1,6 @@
 package tn.esprit.uniiversite.entite;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -26,9 +27,12 @@ public class Foyer implements Serializable {
     private long capacitFoyer;
 
     @OneToOne(mappedBy = "foyers")
+    @JsonIgnore
     private Universite universite;
 
+
     @OneToMany(cascade = CascadeType.ALL,mappedBy = "foyers")
+
     private List<Bloc> Blocs;
 
 }

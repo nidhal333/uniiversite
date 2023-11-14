@@ -34,7 +34,7 @@ import org.springframework.context.annotation.Configuration;
                                     .build();
 
         }
-        @Bean
+       @Bean
         public GroupedOpenApi UniversitePublicApi() {
             return GroupedOpenApi.builder()
                     .group("Only Universite Management API")
