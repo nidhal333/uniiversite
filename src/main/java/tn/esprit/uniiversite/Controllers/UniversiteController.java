@@ -5,7 +5,6 @@ import lombok.AllArgsConstructor;
 import lombok.experimental.FieldDefaults;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
-import tn.esprit.uniiversite.entite.Foyer;
 import tn.esprit.uniiversite.entite.Universite;
 import tn.esprit.uniiversite.service.IUniversiteService;
 import tn.esprit.uniiversite.service.universiteService;
@@ -27,5 +26,10 @@ public class UniversiteController {
     public Universite addFoyer(@RequestBody Universite e){
 
         return universiteServices.addUniversite(e);
+    }
+    @PutMapping("/desaffecter/{iduniversity}")
+    public void  desaffecterFoyerAUniversite (@PathVariable("iduniversity") Long idUniversite){
+        universiteService.desaffecterFoyerAUniversite(idUniversite);
+
     }
 }

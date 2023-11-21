@@ -44,6 +44,15 @@ import org.springframework.context.annotation.Configuration;
 
         }
         @Bean
+        public GroupedOpenApi BlocPublicApi() {
+            return GroupedOpenApi.builder()
+                    .group("Only bloc Management API")
+                    .pathsToMatch("/Bloc/**")
+                    .pathsToExclude("**")
+                    .build();
+
+        }
+        @Bean
         public GroupedOpenApi FoyerPublicApi() {
             return GroupedOpenApi.builder()
                     .group("Only Foyer Management API")

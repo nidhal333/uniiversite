@@ -11,4 +11,5 @@ public interface UniversiteRepository extends JpaRepository<Universite,Long> {
     Universite findByNomuniversite(String name);
     @Override
     <S extends Universite> S save(S entity);
+    Universite findUniversiteById(Long id);
 }

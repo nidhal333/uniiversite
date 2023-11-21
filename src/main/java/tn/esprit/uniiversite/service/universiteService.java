@@ -1,5 +1,6 @@
 package tn.esprit.uniiversite.service;
 
+import jakarta.validation.constraints.Null;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
@@ -30,5 +31,10 @@ public class universiteService implements IUniversiteService{
     @Override
     public Universite addUniversite(Universite e) {
         return UniversiteRepository.save(e);
+    }
+    public void desaffecterFoyerAUniversite (long idUniversite){
+        Universite Universites = UniversiteRepository.findUniversiteById(idUniversite);
+        Universites.setFoyers(null);
+        UniversiteRepository.save(Universites);
     }
 }
