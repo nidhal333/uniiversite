@@ -61,4 +61,22 @@ import org.springframework.context.annotation.Configuration;
                     .build();
 
         }
+        @Bean
+        public GroupedOpenApi chambrePublicApi() {
+            return GroupedOpenApi.builder()
+                    .group("Only chambre Management API")
+                    .pathsToMatch("/chambre/**")
+                    .pathsToExclude("**")
+                    .build();
+
+        }
+        @Bean
+        public GroupedOpenApi reservationPublicApi() {
+            return GroupedOpenApi.builder()
+                    .group("Only reservation Management API")
+                    .pathsToMatch("/Reservation/**")
+                    .pathsToExclude("**")
+                    .build();
+
+        }
 }

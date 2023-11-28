@@ -1,21 +1,26 @@
 package tn.esprit.uniiversite.entite;
 
 import jakarta.persistence.*;
-import lombok.Data;
+import lombok.*;
 
 import java.io.Serializable;
 import java.util.Set;
 
 @Entity
 @Data
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@ToString
 @Table(name = "Chambre")
 public class Chombre implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_Chambre")
-    private long idchambre;
+    private long id;
     @Column(name = "numero_Chambre")
-    private String numeroChambre;
+    private String numerochambre;
     @Column(name = "Type_Chambre")
     private TypeChambre TypeC;
     @ManyToOne

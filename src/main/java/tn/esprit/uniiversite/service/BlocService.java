@@ -1,5 +1,6 @@
 package tn.esprit.uniiversite.service;
 
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import tn.esprit.uniiversite.Reosotiris.BlocRepository;
 import tn.esprit.uniiversite.Reosotiris.ChombreRepository;
@@ -8,6 +9,7 @@ import tn.esprit.uniiversite.entite.Chombre;
 
 import java.util.List;
 
+@AllArgsConstructor
 @Service
 public class BlocService implements IBlocService{
     BlocRepository BlocRepository;
@@ -20,5 +22,9 @@ public class BlocService implements IBlocService{
             BlocRepository.save(bloc);
         }
         return bloc;
+    }
+    @Override
+    public Bloc addBloc (Bloc e){
+        return BlocRepository.save(e);
     }
 }

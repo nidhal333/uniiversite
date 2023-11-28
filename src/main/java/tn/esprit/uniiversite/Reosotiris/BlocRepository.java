@@ -8,5 +8,7 @@ import java.util.Optional;
 
 @Repository
 public interface BlocRepository extends JpaRepository<Bloc,Long> {
+    @Override
+    <S extends Bloc> S save(S entity);
 }
 

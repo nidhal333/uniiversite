@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.Data;
 
 import java.io.Serializable;
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 import java.util.Set;
@@ -17,7 +18,7 @@ public class Reservation implements Serializable {
     //@GeneratedValue
     private String id;
     @Column(name = "annee_universitaire")
-    private Date anneuniversitaire;
+    private LocalDate anneuniversitaire;
     @Column(name = "est_valide")
     private Boolean estValide;
 

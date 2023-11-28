@@ -1,6 +1,8 @@
 package tn.esprit.uniiversite.service;
 
 import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
 import org.springframework.stereotype.Service;
 import tn.esprit.uniiversite.Reosotiris.FoyerRepository;
 import tn.esprit.uniiversite.Reosotiris.UniversiteRepository;
@@ -10,6 +12,8 @@ import tn.esprit.uniiversite.entite.Universite;
 
 @AllArgsConstructor
 @Service
+@Getter
+@Setter
 public class FoyerService implements IFoyerService{
 
     FoyerRepository foyerRepository;
